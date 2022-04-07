@@ -1,4 +1,12 @@
 const Info = (props) => {
+console.log(props.name, props.age, props.email)
+
+
+let thanks
+
+  if (props.name && props.age && props.email) {
+    thanks = <button onClick={props.incrementPage}>Next</button>
+  }
 
   return (
     <div className="info">
@@ -35,8 +43,9 @@ const Info = (props) => {
       <br></br>
       <div>
         <button>Back</button>
-        <button onClick={props.incrementPage}>Next</button>
+        {thanks}
       </div>
+    
     </div>
   )
 }
